@@ -42,7 +42,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     ),
 
     [_WIN] = LAYOUT_3thumb(
-        _______,          _______,          _______,          _______,          _______,          _______,         KC_F11,           KC_F12,           G(KC_L),          KC_LBRC,          KC_RBRC,
+        KC_GRAVE,         _______,          _______,          _______,          _______,          _______,         KC_F11,           KC_F12,           G(KC_L),          KC_LBRC,          KC_RBRC,
         S(G(KC_1)),       S(G(KC_2)),       S(G(KC_3)),       S(G(KC_4)),       _______,                           C(KC_GRV),        KC_MINUS,         KC_EQL,           S(KC_MINUS),      KC_QUOT,
         G(KC_1),          G(KC_2),          G(KC_3),          G(KC_4),          G(KC_5),                           G(KC_6),          G(KC_7),          G(KC_8),          G(KC_9),          G(KC_0),
                                             _______,          _______,          _______,                           _______,          _______,          _______
