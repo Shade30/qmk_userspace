@@ -83,6 +83,6 @@ jobs:
     needs: compile-qmk-user-keymaps
     steps:
       - name: qmk-user-firmware 
-        uses: actions/upload-artifact/merge@v4
+        uses: actions/upload-artifact/merge@v6
         with: 
           delete-merged: true
