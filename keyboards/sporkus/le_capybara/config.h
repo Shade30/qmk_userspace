@@ -78,10 +78,13 @@
 
 // Use this option if front leds are not installed and are bypassed with solder jumper
 #define FRONT_LEDS_BYPASS
-#ifdef FRONT_LED_BYPASS
+#ifdef FRONT_LEDS_BYPASS
     #undef RGB_MATRIX_LED_COUNT
     #define RGB_MATRIX_LED_COUNT 9
 #endif
+
+// Diagnostic mode: force all LEDs to solid white on boot.
+#define RGB_DIAGNOSTIC_WHITE_BOOT
 
 // The following two options are for disabling the front leds if they're installed.
 // Comment these out to disable them. 

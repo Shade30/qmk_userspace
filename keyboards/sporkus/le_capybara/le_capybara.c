@@ -26,5 +26,14 @@ void keyboard_post_init_kb(void) {
         ecsm_config.configured = 0;
         eeconfig_update_kb_datablock(&ecsm_config, 0, sizeof(ecsm_config));
     #endif
+
+    #ifdef RGB_MATRIX_ENABLE
+    #ifdef RGB_DIAGNOSTIC_WHITE_BOOT
+        rgb_matrix_enable_noeeprom();
+        rgb_matrix_mode_noeeprom(RGB_MATRIX_SOLID_COLOR);
+        rgb_matrix_sethsv_noeeprom(HSV_WHITE);
+    #endif
+    #endif
+
     keyboard_post_init_user();
 }
