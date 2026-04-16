@@ -11,3 +11,10 @@ Personal QMK Userspace
 * sadekbaroudi
 * geutreur
 * replicaJunction
+
+## Notes
+* Symbolic links
+```sh
+ln -s ../../qmk_userspace qmk_firmware/users/Shade30
+ln -s ../../qmk_userspace/keyboards/sporkus qmk_firmware/keyboards/sporkus
+```
