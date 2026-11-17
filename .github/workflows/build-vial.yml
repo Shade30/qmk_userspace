@@ -19,7 +19,7 @@ jobs:
 
   compile-vial:
     runs-on: ubuntu-latest
-    container: ghcr.io/qmk/qmk_cli@sha256:b7d7fa8fb4432b569931de5ad59098cb788f440ed61a62c5126746b71aee0f4a
+    container: ghcr.io/qmk/qmk_cli@sha256:2dc05fc9f32efebd6b05c2b8676ee548358bc7e151e9dbf4dac6b6eed4513b07
     needs: list-vial-keyboards
     strategy:
       fail-fast: false
@@ -44,6 +44,12 @@ jobs:
 
     - name: Setup safe directory
       run: git config --global --add safe.directory '*'
+
+    - name: Install rsync
+      run: |
+        sed -i 's|deb.debian.org|archive.debian.org|g' /etc/apt/sources.list
+        apt-get update
+        apt-get install -y rsync
 
     - name: Copy users/keyboards/* to keyboards/*
       run: rsync -av ${{ env.USERSPACE_PATH }}/keyboards/ keyboards/
